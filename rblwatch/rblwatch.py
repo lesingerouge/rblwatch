@@ -3,12 +3,13 @@
 import sys
 import socket
 import re
-import json
 from IPy import IP
 from dns.resolver import Resolver, NXDOMAIN, NoNameservers, Timeout, NoAnswer
 from threading import Thread
 
-RBLS = json.load(open("rbls.json"))
+
+with open("rbls.cfg", "r") as f:
+    RBLS = [item.replace("\n", "") for item in f.readlines()]
 
 
 class Lookup(Thread):
