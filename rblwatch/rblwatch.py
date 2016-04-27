@@ -3,12 +3,13 @@
 import sys
 import socket
 import re
+import os
 from IPy import IP
 from dns.resolver import Resolver, NXDOMAIN, NoNameservers, Timeout, NoAnswer
 from threading import Thread
 
 
-with open("rbls.cfg", "r") as f:
+with open(os.join(os.path.dirname(__file__),"rbls.cfg"), "r") as f:
     RBLS = [item.replace("\n", "") for item in f.readlines()]
 
 
