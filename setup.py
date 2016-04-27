@@ -12,4 +12,6 @@ setup(
     url = 'https://github.com/drscream/rblwatch',
     keywords = ['rbl', 'blacklist', 'mail'],
     install_requires = ['IPy', 'dnspython'],
+    package_data = {'': ['rbls.cfg']},
+    include_package_data = True
 )
